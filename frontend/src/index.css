@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Settingan Global untuk Body */
+body {
+  /* 1. Warna dasar tetap gelap */
+  background-color: #0f0f11;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh; /* Pastikan tinggi minimal selayar penuh */
+
+  /* 2. EFEK GLOW UNGU/BIRU (Sesuai Desain Figma) */
+  /* Ini membuat cahaya melingkar dari tengah atas */
+  background-image: radial-gradient(
+    circle at 50% 0%, /* Posisi pusat cahaya: Tengah Horizontal (50%), Atas Vertikal (0%) */
+    rgba(88, 70, 185, 0.25) 0%, /* Warna inti: Ungu kebiruan terang (agak transparan) */
+    rgba(15, 15, 17, 0) 70% /* Warna luar: Transparan (kembali ke warna dasar hitam) */
+  );
+  
+  /* Agar background tidak bergeser saat di-scroll */
+  background-attachment: fixed; 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Memastikan elemen root (aplikasi React) juga memenuhi layar */
+#root {
+  min-height: 100vh;
+}
